@@ -11,21 +11,30 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Nome não pode ser vazio")
+    private String nome;
+
     @NotBlank(message = "Usuario não pode ser vazio")
     private String usuario;
 
     @NotBlank(message = "Senha não pode ser vazia")
     private String senha;
 
-    @NotBlank(message = "Nível de acesso deve ser informado")
-    private String nivelAcesso;
+    @NotBlank(message = "Cargo deve ser informado")
+    private String cargo;
+
+    @Email
+    @NotBlank(message = "Email não pode ser vazio")
+    private Email email;
 
     public Usuario() {}
 
-    public Usuario(String usuario, String senha, String nivelAcesso) {
+    public Usuario(String nome, String usuario, String senha, String cargo, Email email) {
+        this.nome = nome;
         this.usuario = usuario;
         this.senha = senha;
-        this.nivelAcesso = nivelAcesso;
+        this.cargo = cargo;
+        this.email = email;
     }
 
     // getters e setters

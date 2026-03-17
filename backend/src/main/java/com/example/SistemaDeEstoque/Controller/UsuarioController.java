@@ -1,8 +1,6 @@
 package com.example.SistemaDeEstoque.Controller;
 
-import com.example.SistemaDeEstoque.Model.Produto;
 import com.example.SistemaDeEstoque.Model.Usuario;
-import com.example.SistemaDeEstoque.Service.ProdutoService;
 import com.example.SistemaDeEstoque.Service.UsuarioService;
 import org.springframework.web.bind.annotation.*;
 
