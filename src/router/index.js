@@ -5,7 +5,7 @@ import Categorias from '../views/Categorias.vue'
 const routes = [
   {
     path: '/',
-    redirect: '/login' // 🔥 sempre redireciona corretamente
+    redirect: '/login'
   },
   {
     path: '/login',
@@ -43,16 +43,13 @@ const router = createRouter({
   routes
 })
 
-/* 🔐 PROTEÇÃO DE ROTAS */
 router.beforeEach((to, from, next) => {
   const isAuthenticated = localStorage.getItem("auth") === "true"
 
-  // 🔥 se não estiver logado e tentar acessar rota protegida
   if (to.meta.requiresAuth && !isAuthenticated) {
     return next('/login')
   }
 
-  // 🔥 se já estiver logado e tentar ir pro login
   if (to.path === '/login' && isAuthenticated) {
     return next('/categorias')
   }
