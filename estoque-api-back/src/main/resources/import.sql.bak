@@ -1,0 +1,11 @@
+-- Inserir usuários (senhas: admin123 e user123)
+INSERT INTO usuarios (username, password, nome, papel) VALUES
+('admin', '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi', 'Administrador', 'ADMIN'),
+('funcionario', '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi', 'Funcionário', 'FUNCIONARIO');
+
+-- Inserir produtos
+INSERT INTO produtos (nome, categoria, quantidade, preco) VALUES
+('Notebook Dell', 'Informática', 10, 3500.00),
+('Mouse Logitech', 'Informática', 5, 89.90),
+('Teclado Mecânico', 'Informática', 3, 250.00),
+('Monitor LG', 'Eletrônicos', 2, 1200.00);
